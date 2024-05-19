@@ -1,0 +1,554 @@
+<!--
+   Code by GrouSrlpPrsc | Mã nguồn được viết bởi GrouSrlpPrsc
+   Facebook: https://www.facebook.com/GrouSrlpPrsc
+   Github: https://github.com/phanminhtai
+   My website: https://sharescript.net
+   Share code vui lòng không xoá chú thích này! Cảm ơn!
+   -->
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Vòng quay lì xì 2020 by GrouSrlpPrsc</title>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Francois+One&amp;display=swap'>
+      <link rel='stylesheet' href='css/sweetalert.css'>
+      <link rel='stylesheet' href='css/custom.css'>
+      <script type="text/javascript" src="js/Winwheel.min.js"></script>
+      <script type="text/javascript" src="js/TweenMax.min.js"></script>
+      <script src='js/sweetalert-dev.js'></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> 
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poetsen+One&family=Questrial&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+  <div class="pyro">
+    <div class="before" style="z-index: 9999"></div>
+    <div class="after"></div>
+  </div>
+   <body>
+      <div class="container">
+        <div class="topheader" style="padding-top: 50px;">
+          <img class="responsive" style="z-index:99;top:50px;" src="https://gaubongcaocap.com/wp-content/themes/gaubongcaocap_v2/img/logo.png"/>
+        </div>
+ 
+       <div id="caidat">
+       <img id="popup"src="img/popup.jpg"/>
+       <div class="sotiendalixi" id="sotiendalixi"></div>
+       <div class="lichsulixi" id="lichsulixi"></div>
+       <div class="buttontatpopup" onClick="tatpopup()" ></div>
+       <div class="buttonlammoi" id="lammoi" onClick="lammoi()"></div>
+       <div class="nenpopup"></div>
+       </div>
+ 
+       <div id="popupnhantien">
+        <div class="sotienpopupnhantien" id="sotienpopupnhantien"><img id="xuatsotienpopup"></img></div>
+        <div class="lammoipopupnhantien" id="lammoi" onClick="lammoi()"></div>
+        <div class="nenpopup"></div>
+       </div>
+
+
+       <div id="popupLichSu">
+        <div id="view-lichsu">
+          <div class="div-table">
+            <div class="title-table">Lịch sử nhận thưởng</div>
+            <div class="table">
+              <div class="tr">
+                <div class="td">Họ Tên</div>
+                <div class="td">SĐT</div>
+                <div class="td">Phần Thưởng</div>
+              </div>
+              <div class="tr">
+                <div class="td">Chu Minh Trang</div>
+                <div class="td">09******18</div>
+                <div class="td">Chúc bạn may mắn lần sau</div>
+              </div>
+              <div class="tr">
+                <div class="td">Chu Minh Trang</div>
+                <div class="td">09******18</div>
+                <div class="td">Chúc bạn may mắn lần sau</div>
+              </div>
+              <div class="tr">
+                <div class="td">Chu Minh Trang</div>
+                <div class="td">09******18</div>
+                <div class="td">Chúc bạn may mắn lần sau</div>
+              </div>
+              <div class="tr">
+                <div class="td">Chu Minh Trang</div>
+                <div class="td">09******18</div>
+                <div class="td">GẤU BÔNG LOOPY COSPLAY KOALA HỒNG</div>
+              </div>
+              <div class="tr">
+                <div class="td">Chu Minh Trang</div>
+                <div class="td">09******18</div>
+                <div class="td">Chúc bạn may mắn lần sau</div>
+              </div>
+            </div>
+            
+          </div>
+          <span id="warning-txt">
+            Lưu ý: Những quà trúng giải chúng tôi sẽ xác minh và liên hệ với bạn thông qua số điện thoại tham gia của bạn trong thời gian sớm nhất
+          </span>
+          
+          <span id="warning-txt">
+            Cám ơn bạn đã tham gia trò chơi của chúng tôi
+          </span>
+
+          <div class="button-wrapper-2">
+            <button class="button button--md button--stroke button--neutral button--full" onClick="closeForm2();" style="width: 200px;">
+              <span class="button-label">Đồng ý</span>
+            </button>
+          </div>
+        </div>
+
+        
+       </div>
+
+       <div id="popupLogin">
+        <div class="wrapper">
+
+          <span class="header-text-container">
+            Nhập thông tin để tiếp tục
+          </span>
+
+          <div class="inputtext-wrapper inputtext inputtext--md cals12">
+            <label for="title">Họ và Tên<i>*</i></label>
+            <input class="js-control" type="text" placeholder="Họ và tên" id="Title" name="title" required />
+            <i class="ti ti-check"></i>
+            <span class="error-message error-message--primary" id="titleErr">
+              Vui lòng không được để trống
+            </span>
+          </div>
+        
+          <div class="inputtext-wrapper inputtext inputtext--md ">
+            <label for="title">Địa chỉ email<i>*</i></label>
+            <input class="js-control--email" type="email" placeholder="email@adress.com" id="Email" name="Email" required inputmode="email"/>
+            <i class="ti ti-check"></i>
+            <span class="error-message error-message--secondary" id="emailErr">
+              Vui lòng không được để trống
+            </span>
+          </div>
+        
+          <div class="inputtext-wrapper inputtext inputtext--md ">
+            <label for="title">Số điện thoại<i>*</i></label>
+            <input class="js-control--email" type="number" placeholder="Số điện thoại" id="numberPhone" name="numberPhone" inputmode="numeric" required/>
+            <i class="ti ti-check"></i>
+            <span class="error-message error-message--secondary" id="numnberErr">
+              Vui lòng không được để trống
+            </span>
+          </div>
+          <div class="button-wrapper">
+            <button class="button button--md button--stroke button--neutral button--full" onClick="closeForm();">
+              <span class="button-label">Huỷ bỏ</span>
+            </button>
+            <button class="button button--md button--filled button--primary button--full" onClick="validateForm();">
+              <span class="button-label">Xác nhận</span>
+              <!--<i class="ti ti-arrow-narrow-right"></i>-->
+            </button>
+          </div>
+        </div>
+       </div>
+
+
+ 
+       <div class="vongquay">
+          <canvas id="canvas" width="850" height="850" data-responsiveMinWidth="180" data-responsiveScaleHeight="true" data-responsiveMargin="50">
+          </canvas>
+          <div id="batdauquay" class="nutbatdau"></div>
+          <div onClick="startSpin();" class="nutquay"></div>
+       </div>
+ 
+       <div style="position:fixed;z-index:99;bottom:-50px;left:0;width:100%;height:100px;background:url(img/bot1.png) repeat-x bottom left;"></div>
+       <!-- <div class="nutcaidat" style="position:fixed;bottom:0px;left:20px" onClick="mopopup()"></div> -->
+       <img id="lichsuHover" style="position:fixed;bottom:40px;z-index: 999;right: 39px;z-index: 999;transform: rotate(180deg);" src="img/muiten.gif"/>
+       <div id="lichsuNhan" class="buttonnhantien" style="position:fixed;bottom:2px;right:20px;z-index: 999" onclick="nhantien()">
+        Lịch sử
+       </div>
+       
+       <!-- <input type="range" id="manhornhe" style="position:fixed;bottom:2px;right:20px;z-index: 999" onchange="laypower()" min="5" step="0.01" max="20" value="13"> -->
+ 
+       <div id="annhantien" style="display: flex;">
+        
+        
+       </div>
+ 
+       <div id="card-xuatluot">
+         <span style="color: #6c452a;margin-right: 8px;">Bạn còn</span>
+         <div style="color: #ab6f03" id="xuatluotquay"></div>
+         <span style="color: #6c452a;margin-left: 8px;">lượt quay</span>
+       </div>
+ 
+       <img style="position:fixed;z-index:999;top:105px;left:9px" id="xuatsotien"></img>
+ 
+       <audio id="votay"><source src="sound/votay.mp3" type="audio/mpeg"></audio>
+       <audio id="matluot"><source src="sound/matluot.mp3" type="audio/mpeg"></audio>
+       <audio id="dangquay"><source src="sound/dangquay.mp3" type="audio/mpeg"></audio>
+        
+      </div>
+      
+   </body>
+   <script>
+    var matkhau = "mycode";
+    var solanquay = 0;
+
+    var emailTxt = "";
+    var numberPhoneTxt = "";
+    var nameTxt = "";
+    
+    function closeForm() {
+      document.getElementById("popupLogin").style.display = "none";
+    }
+
+    function closeForm2() {
+      document.getElementById("popupLichSu").style.display = "none";
+    }
+
+    function validateForm () {
+      var email = document.getElementById('Email').value;
+      var numberPhone = document.getElementById('numberPhone').value;
+      var title = document.getElementById('Title').value;
+      var err = 0;
+
+      if(numberPhone.length == 0 ) {
+        document.getElementById("numnberErr").style.display = "block";
+        err = 1;
+      }
+
+      if(email.length == 0 ) {
+        document.getElementById("emailErr").style.display = "block";
+        err = 1;
+      }
+
+      if(title.length == 0) {
+        document.getElementById("titleErr").style.display = "block";
+        err = 1;
+      }
+      
+
+      if(err == 0) {
+        emailTxt = email;
+        numberPhoneTxt = numberPhone;
+        nameTxt = title;
+        solanquay = 0;
+        
+        document.getElementById("lichsuHover").style.display = "flex"; 
+        document.getElementById("lichsuNhan").style.display = "flex"; 
+
+        closeForm();
+      }
+    }
+      // Sau khi load trang sẽ yêu cầu nhập mật khẩu
+      function nhappass() {
+                  swal({
+                  title: "Vòng quay bị khoá!",
+                  text: "Nhập mật khẩu để mở khoá vòng quay:",
+                  type: "input",
+                  showCancelButton: false, // Có hiển thị nút cancel không(true = có)
+                  closeOnConfirm: false, // Có thể tắt popup khi nhấp Ok không (true = có)
+                  showLoaderOnConfirm: true, // Hiển thị loading khi nhấp vào nút Ok
+                  animation: "slide-from-top", // Như tên của nó, popup sẽ slide from top
+                  inputPlaceholder: "Nhập mật khẩu..."
+              },
+              function(inputValue) {
+                  if (inputValue === false) return false;
+      
+                  if (inputValue !== matkhau) {
+                      setTimeout(function() {
+                          swal.showInputError("Mật khẩu sai, vui lòng nhập lại!");
+                      }, 2000);
+                      return false
+                  }
+                  setTimeout(function() {
+                      swal("Mở khoá thành công!", "Hãy đưa chiếc điện thoại cho người muốn nhận lì xì nào!", "success");
+                  }, 2000);
+              });
+      }
+function mopopup() {
+  document.getElementById("caidat").style.display = "block";
+}
+
+function tatpopup() {
+  document.getElementById("caidat").style.display = "none";
+}
+
+$( ".buttontatpopup" ).hover(
+  function() {
+    $("#popup").attr("src",'img/popup2.jpg');
+  }, function() {
+    $("#popup").attr("src",'img/popup.jpg');
+  }
+);
+$( ".buttonlammoi" ).hover(
+  function() {
+    $("#popup").attr("src",'img/popup1.png');
+  }, function() {
+    $("#popup").attr("src",'img/popup.jpg');
+  }
+);
+$( ".buttonnhantien" ).hover(
+  function() {
+    $(".buttonnhantien").attr("src",'img/nhantienhover.png');
+  }, function() {
+    $(".buttonnhantien").attr("src",'img/nhantien.png');
+  }
+);
+$( ".lammoipopupnhantien" ).hover(
+  function() {
+    $("#popuptien").attr("src",'img/popupnhantienhover.png');
+  }, function() {
+    $("#popuptien").attr("src",'img/popupnhantien.png');
+  }
+);
+      let theWheel = new Winwheel({
+          'outerRadius': 220, // Bán kính ngoài
+          'innerRadius': 0, // Size lỗ trung tâm
+          'textFontSize': 24, // Size chữ
+          'textOrientation': 'horizontal', // Chữ nằm ngang
+          'textAlignment': 'outer', // Căn chỉnh văn bản ra bên ngoài bánh xe.
+          'numSegments': 8, // Số ô
+          'responsive': true,
+          'segments': [{
+              'fillStyle': '#910f06',
+              'text': 'Ô mất lượt',
+              'size': winwheelPercentToDegrees(30),
+              'textFontSize': 30,
+              'textFillStyle': '#ffffff'
+          }, {
+              'fillStyle': '#ab6f03',
+              'text': 'Phiếu mua \nhàng giảm 5%',
+              'size': winwheelPercentToDegrees(16),
+              'textFontSize': 22,
+              'textFillStyle': '#ffffff'
+          }, {
+              'fillStyle': '#910f06',
+              'text': 'Phiếu mua \nhàng giảm 50k',
+              'size': winwheelPercentToDegrees(13),
+              'textFontSize': 22,
+              'textFillStyle': '#ffffff'
+          }, {
+              'fillStyle': '#ab6f03',
+              'text': 'Phiếu mua \nhàng giảm 70k',
+              'size': winwheelPercentToDegrees(15),
+              'textFontSize': 22,
+              'textFillStyle': '#ffffff'
+          }, {
+              'fillStyle': '#910f06',
+              'text': 'Phiếu mua \nhàng giảm 80k',
+              'size': winwheelPercentToDegrees(12),
+              'textFontSize': 20,
+              'textFillStyle': '#ffffff'
+          }, {
+              'fillStyle': '#ab6f03',
+              'text': 'Phiếu mua \nhàng giảm 100k',
+              'size': winwheelPercentToDegrees(10),
+              'textFontSize': 20,
+              'textFillStyle': '#ffffff'
+          }, {
+              'fillStyle': '#910f06',
+              'text': 'SHIN TOTORO',
+              'size': winwheelPercentToDegrees(3),
+              'textFontSize': 12,
+              'textFillStyle': '#ffffff'
+          }, {
+              'fillStyle': '#ab6f03',
+              'text': 'LOOPY KOALA HỒNG',
+              'size': winwheelPercentToDegrees(3),
+              'textFontSize': 12,
+              'textFillStyle': '#ffffff'
+          }],
+          'animation': // Chỉ định hình động để sử dụng.
+          {
+              'type': 'spinToStop',
+              'duration': 20, // Thời lượng tính bằng giây.
+              'spins': 10, // Số vòng quay hoàn chỉnh mặc định.
+              'callbackFinished': alertPrize,
+              'callbackSound': playSound, // Chức năng gọi khi âm thanh đánh dấu được kích hoạt.
+              'soundTrigger': 'pin', // Chỉ định các chân là để kích hoạt âm thanh, tùy chọn khác là 'phân đoạn'.
+              'type'             : 'spinToStop',
+              'duration'         : 6.4,
+          },
+          'pins': {
+              'number': 8, // Số lượng chân. Họ không gian đều xung quanh bánh xe.
+              'responsive': true,
+              'fillStyle': 'silver',
+              'outerRadius': 4,
+          }
+      });
+      
+      // Vars được sử dụng bởi mã trong trang này để thực hiện các điều khiển nguồn.
+      let wheelPower = 13;
+      let wheelSpinning = false;
+      // ---------------------------------------------------------------------
+      // Tải âm thanh đánh dấu và chức năng phát được gọi khi pin đi qua con trỏ.
+      let audio = new Audio('http://dougtesting.net//elements/sound/tick.mp3'); // Tạo đối tượng âm thanh và tải tập tin tick.mp3.
+      
+      var dem = 0;
+      var demnhantien = 0; // Đếm số lần click vào nút nhận tiền
+      var lichsulixi = "";
+      var tongtienlixi = 0;
+      var tiendalixi;
+      document.getElementById("xuatluotquay").innerHTML = solanquay;
+      var votay = document.getElementById("votay");
+      var matluot = document.getElementById("matluot");
+      var dangquay = document.getElementById("dangquay");
+      
+      function playSound() {
+          // Dừng và tua lại âm thanh nếu nó đã phát.
+          audio.pause();
+          audio.currentTime = 0;
+      
+          // Phát âm thanh.
+          audio.play();
+      }
+      
+      // -------------------------------------------------------
+      // Xử lý thanh range
+      // -------------------------------------------------------
+      function laypower() {
+          wheelPower = document.getElementById("manhornhe").value; // Lấy dữ liệu thanh range
+      }
+      
+      // -------------------------------------------------------
+      // Sau khi nhấp vào nút quay
+      // -------------------------------------------------------
+      function startSpin() {
+          // Nút quay không nhấp được khi đang chạy
+
+          if (emailTxt.length == 0) {
+            document.getElementById("popupLogin").style.display = "flex"; 
+
+            return;
+          }
+
+          
+          if (wheelSpinning == false && solanquay > 0) {
+              // Dựa trên mức công suất được chọn, hãy điều chỉnh số vòng quay cho bánh xe, càng nhiều lần
+              // để xoay với thời lượng của hình ảnh động thì bánh xe quay càng nhanh.
+              theWheel.animation.spins = wheelPower;
+      
+              // Tắt nút xoay để không thể nhấp lại trong khi bánh xe đang quay.
+              // $(".nutbatdau").css("background-image", "url(img/controtat.png)");
+      
+              // Bắt đầu quay bằng cách gọi startAnimation.
+              theWheel.startAnimation();
+      
+              // Đặt thành true để không thể thay đổi nguồn và bật nút quay lại trong khi
+              // hình ảnh động hiện tại. Người dùng sẽ phải thiết lập lại trước khi quay lại.
+              wheelSpinning = true;
+          } else {
+            swal("Rất tiếc!", "\nBạn đã hết lượt quay", "error");
+          }
+          
+          if (dem < solanquay) {
+            dangquay.play();
+          }
+      }
+      
+      // -------------------------------------------------------
+      // Sau khi nhấp vào nút làm mới
+      // -------------------------------------------------------
+      function lammoi() {
+          swal({
+                  title: "Làm mới vòng quay!",
+                  text: "Làm mới vòng quay sẽ xoá hết các vòng quay còn lại. \nLịch sử và tổng tiền lì xì vẫn giữ nguyên. \nChú ý nếu tải lại trang sẽ làm mất lịch sử và tổng tiền lì xì\nNhập mật khẩu để tiếp tục:",
+                  type: "input",
+                  showCancelButton: true, // Có hiển thị nút cancel không(true = có)
+                  closeOnConfirm: false, // Có thể tắt popup khi nhấp Ok không (true = có)
+                  showLoaderOnConfirm: true, // Hiển thị loading khi nhấp vào nút Ok
+                  animation: "slide-from-top", // Như tên của nó, popup sẽ slide from top
+                  inputPlaceholder: "Nhập mật khẩu..."
+              },
+              function(inputValue) {
+                  if (inputValue === false) return false;
+      
+                  if (inputValue !== matkhau) {
+                      setTimeout(function() {
+                          swal.showInputError("Mật khẩu sai, vui lòng nhập lại!");
+                      }, 2000);
+                      return false
+                  }
+                  setTimeout(function() {
+                      swal("Làm mới thành công!", "Hãy đưa chiếc điện thoại cho người muốn nhận lì xì nào!", "success");
+
+                      document.getElementById("popupnhantien").style.display = "none"; // Tắt popup nhận tiền
+
+                      theWheel.stopAnimation(false); // Dừng hình động
+                      theWheel.rotationAngle = 0; // Đặt lại góc bánh xe về 0 độ.
+                      theWheel.draw(); // Gọi draw để hiển thị các thay đổi cho bánh xe.
+      
+                      $(".nutbatdau").css("background-image", "url(img/contro.png)"); // Hiển thị lại nút Quay
+      
+                      document.getElementById("xuatluotquay").innerHTML = solanquay;
+      
+                      wheelSpinning = false; // Đặt lại thành false thành các nút nguồn và quay có thể được bấm lại.
+                      document.getElementById("annhantien").style.display = "none"; // Ẩn nút nhận tiền
+                      document.getElementById("xuatsotien").src =""; // Xoá ảnh tiền
+      
+                      dem = 0;
+                  }, 2000);
+              });
+      }
+
+      // -------------------------------------------------------
+      // Sau khi vòng quay quay xong
+      // -------------------------------------------------------
+      function alertPrize(indicatedSegment) {
+          dem++;
+          tiendalixi=indicatedSegment.text.replace(".000 VNĐ", "");
+
+          if (dem < solanquay) { // Check xem đã hết lượt quay chưa
+              theWheel.rotationAngle = 0; // Đặt lại góc bánh xe về 0 độ.
+              theWheel.draw(); // Gọi draw để hiển thị các thay đổi cho bánh xe.
+              wheelSpinning = false; // Đặt lại thành false thành các nút nguồn và quay có thể được bấm lại.
+      
+              $(".nutbatdau").css("background-image", "url(img/contro.png)"); // Hiển thị lại nút Quay
+              document.getElementById("xuatluotquay").innerHTML = solanquay - dem; // Xuất kết quả
+              
+      
+              if (indicatedSegment.text == 'Ô mất lượt') { // Nếu quay vào 0k
+                  matluot.play(); // Bật nhạc fail
+
+                  document.getElementById("annhantien").style.display = "none"; // Ẩn nút nhận tiền
+                  document.getElementById("xuatsotien").src = ""; // Xoá ảnh tiền
+
+                  swal("Rất tiếc!", "Bạn không nhận được đồng nào\nNhưng bạn còn lại " + (solanquay - dem) + " lần quay, cố gắng lên nào!", "error");
+              } else { // Nếu không quay vào 0k
+                  votay.play(); // Bật nhạc vỗ tay
+
+                  document.getElementById("annhantien").style.display = ""; // Hiển thị nút nhận tiền
+                  document.getElementById("xuatsotien").src = "img/" + indicatedSegment.text.replace(".000 VNĐ", "") + "k.jpg"; // Xuất ảnh tiền
+
+                  swal("Tết ấm no!", "Bạn nhận được " + indicatedSegment.text + "\nBạn còn lại " + (solanquay - dem) + " lần quay\nChú ý: Nếu quay tiếp bạn sẽ mất số tiền trước đó!", "success");
+              }
+          } else { // Nếu hết lượt quay(dem = solanquay)
+              document.getElementById("xuatluotquay").innerHTML = "0";
+              $(".nutbatdau").css("background-image", "url(img/controhetluot.png)");
+      
+              if (indicatedSegment.text == 'Ô mất lượt') {
+                  matluot.play(); // Bật nhạc fail
+
+                  document.getElementById("annhantien").style.display = "none"; // Ẩn nút nhận tiền
+                  document.getElementById("xuatsotien").src = ""; // Xoá ảnh tiền
+
+                  swal("Rất tiếc!", "Bạn không nhận được đồng nào và số lượt quay đã hết!", "error");
+              } else {
+                  votay.play(); // Bật nhạc vỗ tay
+
+                  document.getElementById("annhantien").style.display = ""; // Hiển thị nút nhận tiền
+                  document.getElementById("xuatsotien").src = "img/" + indicatedSegment.text.replace(".000 VNĐ", "") + "k.jpg"; // Xuất ảnh tiền
+
+                  swal("Tết ấm no!", "Bạn nhận được " + indicatedSegment.text + "\nBạn đã hết lượt quay", "success");
+              }
+          }
+      }
+
+      // -------------------------------------------------------
+      // Sau khi nhấp vào nút nhận tiền
+      // -------------------------------------------------------
+      function nhantien() {
+        document.getElementById("popupLichSu").style.display = "flex";
+      }
+      
+   </script>
+</html>
